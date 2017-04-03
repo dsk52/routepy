@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template
+from flask import Flask, render_template, abort
 app = Flask(__name__)
 
 
@@ -26,6 +26,20 @@ def archive(cat):
     '''
     data = ['hoge', 'fuga', 'boo']
     return render_template('archive.html', title=cat, data=data)
+
+
+@app.route('/404')
+def abort404():
+    abort(404)
+
+
+@app.errorhandler(404)
+def error_handler(error):
+    '''
+    abort(404) したと時にレスポンスをハンドリングするハンドラ
+    '''
+    msg = 'Error: {code}\n'.format(code=error.code)
+    return msg, error.code
 
 
 if __name__ == '__main__':

@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, url_for, redirect
 app = Flask(__name__)
 
 
@@ -26,6 +26,11 @@ def archive(cat):
     '''
     data = ['hoge', 'fuga', 'boo']
     return render_template('archive.html', title=cat, data=data)
+
+
+@app.route('/works')
+def work():
+    return redirect(url_for('index'))
 
 
 @app.route('/404')

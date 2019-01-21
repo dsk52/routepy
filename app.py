@@ -18,7 +18,7 @@ def about(title='About'):
     return render_template('page.html', title=title)
 
 
-@app.route('/archive/<cat>')
+@app.route('/blog/archive/<cat>')
 def archive(cat):
     '''
     Description:

@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% if title %}
-  <title>{{ title }} Page</title>
-  {% endif %}
-</head>
-<body>
-  {% if title %}
-  <h1>{{ title }} Page</h1>
-  {% else %}
-  <h1>Page</h1>
-  {% endif %}
-</body>
-</html>
+{% extends "base.html" %}
+{% block title %}{{ title }}{% endblock %}
+
+{% block content %}
+<h1>{{ title }}</h1>
+{% endblock %}

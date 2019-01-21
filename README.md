@@ -17,7 +17,7 @@ PythonのフレームワークFlaskを使ってルーティングを行い、幾
 ## Example
 
 ```
-$ source/bin/activate.fish
+// Activate virtualenv and do this command.
 > pip install
 
 > python app.py

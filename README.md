@@ -10,4 +10,15 @@ PythonのフレームワークFlaskを使ってルーティングを行い、幾
 
 
 ## Env
-Python 3.6.0
+
+* Python 3.6.0
+
+
+## Example
+
+```
+$ source/bin/activate.fish
+> pip install
+
+> python app.py
+```

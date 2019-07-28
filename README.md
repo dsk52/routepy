@@ -22,3 +22,9 @@ PythonのフレームワークFlaskを使ってルーティングを行い、幾
 
 > python app.py
 ```
+
+## check json response
+
+```
+$ curl -X GET 'http://0.0.0.0:5000/hogesearch'
+```

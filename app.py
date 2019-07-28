@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-from flask import Flask, render_template, abort, url_for, redirect
+from flask import Flask, render_template, abort, url_for, redirect, jsonify
+
 app = Flask(__name__)
 
 
@@ -31,6 +32,31 @@ def archive(cat):
 @app.route('/works')
 def work():
     return redirect(url_for('index'))
+
+@app.route('/hogesearch', methods=['get'])
+def post_request():
+    ### ここでなんやかんや検索する
+
+    ### 返したいオブジェクト(辞書)にする
+    output = {
+        "serachWord":"大阪 Python",
+        "result":[
+            {
+                'word': 'Python',
+                'score': 50
+            },
+            {
+                'word': 'はんなり Python',
+                'score': 40
+            },
+            {
+                'word': '大阪 Python',
+                'score': 100
+            }
+        ]
+    }
+    ### jsonifyに渡す
+    return jsonify(output)
 
 
 @app.route('/404')
